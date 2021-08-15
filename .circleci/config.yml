@@ -17,6 +17,9 @@ jobs:
           paths:
             - node_modules
           key: 'v1-dependencies-{{ checksum "package.json" }}'
+      - run:
+          name: 'Check for linting problems'
+          command: 'yarn lint'
       - run: 'yarn test'
       - run:
           name: 'Build Project'
@@ -24,9 +27,6 @@ jobs:
       - run:
           name: 'Deploy to Firebase Hosting'
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-      - run:
-          name: 'Check for linting problems'
-          command: 'yarn lint'
 
 workflows:
   main:
