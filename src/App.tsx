@@ -13,6 +13,9 @@ const App: React.FC = () => (
         {' '}
         and save to reload.
       </p>
+      <p>
+        Its working 🤓
+      </p>
       <a
         className="App-link"
         href="https://reactjs.org"
