@@ -24,15 +24,13 @@ jobs:
       - run:
           name: 'Deploy to Firebase Hosting'
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-  lint:
-    steps:
       - run:
           name: 'Check for linting problems'
           command: 'yarn lint'
+
 workflows:
   main:
     jobs:
-      - lint
       - build:
           filters:  # using regex filters requires the entire branch to match
             branches:
