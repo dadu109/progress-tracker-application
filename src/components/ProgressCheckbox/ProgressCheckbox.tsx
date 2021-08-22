@@ -6,7 +6,7 @@ import pop from '../../assets/pop.mp3';
 import unpop from '../../assets/unpop.mp3';
 
 interface ProgressCheckboxProps {
-    onChange: (value: boolean) => void;
+    onChange?: (value: boolean) => void;
     label: string;
     initialChecked?: boolean;
 }
@@ -21,6 +21,7 @@ const ProgressCheckbox: React.FC<ProgressCheckboxProps> = ({
   const [playUnpop] = useSound(unpop, { volume: 0.5, playbackRate: 1.5 });
 
   useEffect(() => {
+    if (!onChange) return;
     onChange(checked);
   }, [checked, onChange, playPop]);
 

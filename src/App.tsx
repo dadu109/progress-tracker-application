@@ -9,7 +9,6 @@ const App: React.FC = () => (
       ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
         <ProgressCheckbox
           key={day}
-          onChange={(val) => { console.log(`${day} ${val}`); }}
           label={day}
         />
       ))
