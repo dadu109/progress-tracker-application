@@ -34,8 +34,10 @@ const ProgressCheckbox: React.FC<ProgressCheckboxProps> = ({
     }
   };
 
-  const handleKeyDown = (): void => {
-    toggleChecked();
+  const handleKeyDown = (e: React.KeyboardEvent): void => {
+    if (e.code === 'Space') {
+      toggleChecked();
+    }
   };
 
   const handleClick = (): void => {
