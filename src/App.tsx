@@ -4,14 +4,18 @@ import ProgressCheckbox from './components/ProgressCheckbox/ProgressCheckbox';
 const App: React.FC = () => (
   <div>
     Its working 🤓
-    <p>
-      veri najs
-    </p>
-    <ProgressCheckbox
-      initialChecked
-      onChange={(val) => { console.log(val); }}
-      label="test"
-    />
+    <div>
+      {
+      ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
+        <ProgressCheckbox
+          key={day}
+          onChange={(val) => { console.log(`${day} ${val}`); }}
+          label={day}
+        />
+      ))
+    }
+    </div>
+
   </div>
 );
 

@@ -1,0 +1,35 @@
+.checkboxWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox {
+    width: 50px;
+    height: 50px;
+    
+    border: 1px solid #000;
+    border-radius: 5px;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.checkboxInside {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+
+    background-color: #65CD13;
+
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(.17,1.91,.65,.56);
+
+    &Checked {
+        transform: scale(1)
+    }
+}
